@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manprit Singh Panesar — Impact Portfolio 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #EFEFEF;
+            color: #0A0F1E;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            background: white;
+            border-bottom: 2px solid #E8E3D8;
+            padding: 14px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-brand { display: flex; align-items: center; gap: 12px; }
+        .nav-monogram {
+            width: 40px; height: 40px; background: #0A0F1E;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            font-family: 'DM Serif Display', serif; color: #C9A84C; font-size: 18px;
+        }
+        .nav-title    { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0A0F1E; }
+        .nav-subtitle { font-size: 11px; color: #64748B; font-weight: 500; }
+        .nav-btn {
+            background: #0A0F1E; color: #E8C97A; border: none; cursor: pointer;
+            padding: 10px 22px; border-radius: 7px;
+            font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            display: flex; align-items: center; gap: 7px;
+        }
+        .nav-btn:hover { background: #C9A84C; color: #0A0F1E; }
+
+        /* ── PAGE ── */
+        #page {
+            width: 794px;
+            margin: 30px auto 50px;
+            background: white;
+            border: 1px solid #DDD;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+        }
+
+        /* ── HEADER STRIP ── */
+        .header-strip {
+            background: #0A0F1E;
+            padding: 44px 50px 40px;
+        }
+        .role-tag {
+            display: inline-block;
+            border: 1px solid rgba(201,168,76,0.5);
+            color: #C9A84C;
+            font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+            padding: 5px 12px; border-radius: 4px; margin-bottom: 20px;
+        }
+        .name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 54px; color: white; line-height: 1; letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+        .name span { color: #C9A84C; font-style: italic; }
+        .tagline {
+            font-size: 14px; color: #94A3B8; font-weight: 400; line-height: 1.6;
+            margin: 14px 0 30px; max-width: 520px;
+        }
+        .tagline strong { color: #CBD5E1; font-weight: 600; }
+
+        .contact-row {
+            display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+            border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px;
+        }
+        .c-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #94A3B8; }
+        .c-item svg, .c-item span.ic { font-size: 13px; }
+        .org { margin-left: auto; text-align: right; }
+        .org-label { font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.45); }
+        .org-name  { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.35); }
+
+        /* ── STATS ROW ── */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            border-bottom: 2px solid #E8E3D8;
+        }
+        .stat {
+            padding: 22px 20px; text-align: center;
+            border-right: 1px solid #E8E3D8;
+        }
+        .stat:last-child { border-right: none; }
+        .stat-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 40px; color: #0A0F1E; line-height: 1; letter-spacing: -0.02em;
+        }
+        .stat-lbl { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #94A3B8; margin-top: 4px; }
+
+        /* ── SECTION HEADER ── */
+        .section-hd {
+            padding: 36px 50px 0;
+        }
+        .eyebrow {
+            font-size: 9px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase;
+            color: #C9A84C; margin-bottom: 6px;
+        }
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px; color: #0A0F1E; letter-spacing: -0.01em;
+            padding-bottom: 20px;
+            border-bottom: 1.5px solid #E8E3D8;
+        }
+
+        /* ── PROJECT CARDS ── */
+        .projects { padding: 0 50px 10px; }
+
+        .pcard {
+            display: grid; grid-template-columns: 1fr 175px;
+            border: 1px solid #E8E3D8; border-radius: 10px;
+            overflow: hidden; margin-top: 18px;
+            page-break-inside: avoid; break-inside: avoid;
+        }
+
+        .pcard-body { padding: 26px 28px; }
+
+        .pcard-top { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .pnum {
+            width: 30px; height: 30px; background: #0A0F1E; border-radius: 7px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'DM Serif Display', serif; font-size: 13px; color: #C9A84C; flex-shrink: 0;
+        }
+        .tag {
+            font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 3px 8px; border-radius: 4px;
+        }
+        .tag-gold { background: #FDF6E3; color: #8B6914; border: 1px solid #E8D5A0; }
+        .tag-blue { background: #EFF4FF; color: #2D6FE8; border: 1px solid #BFCFFA; }
+
+        .ptitle {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px; color: #0A0F1E; margin-bottom: 14px; line-height: 1.2;
+        }
+
+        .srow { display: grid; grid-template-columns: 72px 1fr; gap: 7px 12px; margin-bottom: 7px; align-items: baseline; }
+        .skey { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #C9A84C; }
+        .sval { font-size: 12.5px; font-weight: 400; line-height: 1.55; color: #475569; }
+        .sval strong { color: #0A0F1E; font-weight: 600; }
+
+        /* Impact panel — light colored, no dark bg */
+        .pimpact {
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 26px 20px;
+            border-left: 1px solid #E8E3D8;
+        }
+        .pimpact-label {
+            font-size: 9px; font-weight: 800; letter-spacing: 0.18em;
+            text-transform: uppercase; margin-bottom: 10px;
+        }
+        .pimpact-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 42px; line-height: 1; letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+        .pimpact-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 16px; line-height: 1.25; margin-bottom: 8px;
+        }
+        .pimpact-sub { font-size: 11px; font-weight: 400; line-height: 1.5; color: #64748B; }
+
+        /* Panel color themes — light versions */
+        .pi-navy  { background: #F0F2F7; }
+        .pi-navy  .pimpact-label { color: #0A0F1E; }
+        .pi-navy  .pimpact-title { color: #0A0F1E; }
+
+        .pi-blue  { background: #EFF4FF; }
+        .pi-blue  .pimpact-label { color: #2D6FE8; }
+        .pi-blue  .pimpact-num   { color: #2D6FE8; }
+        .pi-blue  .pimpact-title { color: #1A3A8A; }
+
+        .pi-green { background: #ECFDF5; }
+        .pi-green .pimpact-label { color: #059669; }
+        .pi-green .pimpact-num   { color: #059669; }
+        .pi-green .pimpact-title { color: #065F46; }
+
+        .pi-orange { background: #FFF7ED; }
+        .pi-orange .pimpact-label { color: #D9550A; }
+        .pi-orange .pimpact-title { color: #7C2D12; }
+
+        /* ── SKILLS ── */
+        .skills-wrap {
+            padding: 0 50px 40px;
+            margin-top: 30px;
+        }
+        .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 0; }
+
+        .skcard {
+            border: 1px solid #E8E3D8; border-radius: 10px;
+            padding: 22px 20px;
+            page-break-inside: avoid; break-inside: avoid;
+        }
+        .sk-icon { font-size: 20px; margin-bottom: 12px; }
+        .sk-cat  { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #C9A84C; margin-bottom: 12px; }
+        .sk-list { list-style: none; }
+        .sk-list li {
+            font-size: 12.5px; font-weight: 500; color: #334155;
+            padding: 5px 0; border-bottom: 1px solid #F1F0ED;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sk-list li:last-child { border-bottom: none; }
+        .sk-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #C9A84C; flex-shrink: 0; }
+
+        /* ── FOOTER ── */
+        .footer-strip {
+            background: #0A0F1E;
+            padding: 18px 50px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .footer-strip .fl { font-family: 'DM Serif Display', serif; font-size: 15px; color: rgba(255,255,255,0.3); }
+        .footer-strip .fl span { color: #C9A84C; }
+        .footer-strip .fr { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+
+        /* ════════════════════════════
+           PRINT STYLES
+           ════════════════════════════ */
+        @media print {
+            @page { size: A4 portrait; margin: 0; }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body { background: white !important; }
+            .navbar { display: none !important; }
+
+            #page {
+                width: 100% !important;
+                margin: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .pcard        { page-break-inside: avoid !important; break-inside: avoid !important; }
+            .skcard       { page-break-inside: avoid !important; break-inside: avoid !important; }
+            .skills-wrap  { page-break-inside: avoid !important; break-inside: avoid !important; }
+            .header-strip { page-break-inside: avoid !important; break-inside: avoid !important; }
+
+            .header-strip  { background: #0A0F1E !important; }
+            .footer-strip  { background: #0A0F1E !important; }
+            .pi-navy       { background: #F0F2F7 !important; }
+            .pi-blue       { background: #EFF4FF !important; }
+            .pi-green      { background: #ECFDF5 !important; }
+            .pi-orange     { background: #FFF7ED !important; }
+            .pnum          { background: #0A0F1E !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-monogram">M</div>
+            <div>
+                <div class="nav-title">Impact Portfolio</div>
+                <div class="nav-subtitle">Sony India Software Centre · 2026</div>
+            </div>
+        </div>
+        <button class="nav-btn" onclick="window.print()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 16l-4-4m4 4l4-4m-4 4V4M4 20h16"/></svg>
+            Save as PDF
+        </button>
+    </nav>
+
+    <div id="page">
+
+        <!-- HEADER -->
+        <div class="header-strip">
+            <div class="role-tag">Software Engineer Intern &nbsp;·&nbsp; SIE &nbsp;·&nbsp; SARD</div>
+            <div class="name">Manprit Singh<br><span>Panesar</span></div>
+            <p class="tagline">
+                Building <strong>Unified CI Framework</strong> for complex enterprise platforms.
+                Specialist in AI-Agents, ML-driven Cost Saving & Portable CI Architecture.
+            </p>
+            <div class="contact-row">
+                <div class="c-item">
+                    <span class="ic">✉</span>
+                    <span>ManpritSingh.Panesar@sony.com</span>
+                </div>
+                <div class="c-item">
+                    <svg width="12" height="12" fill="#94A3B8" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span>linkedin.com/in/manprit-singh1</span>
+                </div>
+                <div class="c-item org">
+                    <div>
+                        <div class="org-label">Organization</div>
+                        <div class="org-name">Sony India Software Centre</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-num">~90%</div>
+                <div class="stat-lbl">Faster Environment Setup</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">~76%</div>
+                <div class="stat-lbl">AWS Node Prediction Accuracy</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">Zero</div>
+                <div class="stat-lbl">Vendor Lock-in Achieved</div>
+            </div>
+        </div>
+
+        <!-- PROJECTS HEADING -->
+        <div class="section-hd">
+            <div class="eyebrow">Work Portfolio</div>
+            <div class="section-title">Strategic Achievements</div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="projects">
+
+            <!-- P1 -->
+            <div class="pcard">
+                <div class="pcard-body">
+                    <div class="pcard-top">
+                        <div class="pnum">01</div>
+                        <span class="tag tag-blue">DevOps · Architecture</span>
+                    </div>
+                    <div class="ptitle">CI-Agnostic Portable Architecture</div>
+                    <div class="srow">
+                        <span class="skey">Situation</span>
+                        <span class="sval">Core pipeline logic was <strong>trapped inside tool-specific scripts</strong> (Jenkins Groovy), making migration between tools impossible without full re-coding.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Task</span>
+                        <span class="sval">Architect a <strong>Portable Framework</strong> where business logic lives independently and CI tools act purely as execution triggers.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Result</span>
+                        <span class="sval">Decoupled core logic from the CI layer. One unified logic set running across <strong>Jenkins, GitLab CI, and GitHub Actions</strong> simultaneously.</span>
+                    </div>
+                </div>
+                <div class="pimpact pi-navy">
+                    <div class="pimpact-label">Business Impact</div>
+                    <div class="pimpact-title">Zero Vendor Lock-in</div>
+                    <div class="pimpact-sub">Standardized portable logic across all CI platforms. Future-proof for any tool migration.</div>
+                </div>
+            </div>
+
+            <!-- P2 -->
+            <div class="pcard">
+                <div class="pcard-body">
+                    <div class="pcard-top">
+                        <div class="pnum">02</div>
+                        <span class="tag tag-blue">Platform · Automation</span>
+                    </div>
+                    <div class="ptitle">Unified CI Framework (Core Engine)</div>
+                    <div class="srow">
+                        <span class="skey">Situation</span>
+                        <span class="sval">Developers were <strong>wasting 2–3 days</strong> re-creating fragmented build pipelines for each new Java, Python, or React project from scratch.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Task</span>
+                        <span class="sval">Build a single, high-standard <strong>Shared Library</strong> to fully automate DevOps workflows across all technology stacks.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Result</span>
+                        <span class="sval">Delivered <strong>UnifiedCI</strong> — auto-detects project language and applies standard quality gates with zero manual configuration.</span>
+                    </div>
+                </div>
+                <div class="pimpact pi-blue">
+                    <div class="pimpact-label">Time Saved</div>
+                    <div class="pimpact-num">~90%</div>
+                    <div class="pimpact-title">3 days → 2 hours</div>
+                    <div class="pimpact-sub">Standardized 100+ projects automatically.</div>
+                </div>
+            </div>
+
+            <!-- P3 -->
+            <div class="pcard">
+                <div class="pcard-body">
+                    <div class="pcard-top">
+                        <div class="pnum">03</div>
+                        <span class="tag tag-blue">ML · Cloud Cost</span>
+                    </div>
+                    <div class="ptitle">ML-Powered AWS Cost Optimization</div>
+                    <div class="srow">
+                        <span class="skey">Situation</span>
+                        <span class="sval">Developers defaulted to <strong>oversized AWS nodes (32GB)</strong> for small builds out of guesswork, causing significant, preventable cloud budget waste.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Task</span>
+                        <span class="sval">Develop a <strong>predictive ML engine</strong> to select the cheapest viable AWS node based on historical project build data.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Result</span>
+                        <span class="sval">Model estimating CPU/Memory requirements with <strong>~76% accuracy before a build starts</strong>, enabling right-sizing at scale.</span>
+                    </div>
+                </div>
+                <div class="pimpact pi-green">
+                    <div class="pimpact-label">Cost Impact</div>
+                    <div class="pimpact-num">~76%</div>
+                    <div class="pimpact-title">Prediction Accuracy</div>
+                    <div class="pimpact-sub">Direct reduction in AWS overspend through intelligent node selection.</div>
+                </div>
+            </div>
+
+            <!-- P4 -->
+            <div class="pcard">
+                <div class="pcard-body">
+                    <div class="pcard-top">
+                        <div class="pnum">04</div>
+                        <span class="tag tag-gold">Hackathon 2026</span>
+                        <span class="tag tag-blue">AI Agents · MCP</span>
+                    </div>
+                    <div class="ptitle">Agentic AI: Self-Healing CI/CD</div>
+                    <div class="srow">
+                        <span class="skey">Situation</span>
+                        <span class="sval">Manually diagnosing build failures forced developers to <strong>trawl through thousands of log lines</strong>, spending hours on predictable, recurring problems.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Task</span>
+                        <span class="sval">Create an <strong>autonomous AI system</strong> that independently identifies build failure root causes and surfaces actionable fix suggestions.</span>
+                    </div>
+                    <div class="srow">
+                        <span class="skey">Result</span>
+                        <span class="sval">Implemented <strong>Agentic AI with MCP</strong> that diagnoses failures and provides automated code remediation — reducing mean debug time dramatically.</span>
+                    </div>
+                </div>
+                <div class="pimpact pi-orange">
+                    <div class="pimpact-label">Recognition</div>
+                    <div class="pimpact-title">SIE Hackathon 2026</div>
+                    <div class="pimpact-sub">Automated log analysis eliminates manual debugging. Autonomous failure recovery at pipeline level.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SKILLS HEADING -->
+        <div class="section-hd" style="margin-top:10px;">
+            <div class="eyebrow">Core Competencies</div>
+            <div class="section-title">Technical Skills</div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="skills-wrap">
+            <div class="skills-grid">
+                <div class="skcard">
+                    <div class="sk-icon">🤖</div>
+                    <div class="sk-cat">Intelligent Automation</div>
+                    <ul class="sk-list">
+                        <li>Agentic AI</li>
+                        <li>Model Context Protocol (MCP)</li>
+                        <li>ML Data Modeling & Training</li>
+                        <li>Predictive Node Allocation</li>
+                    </ul>
+                </div>
+                <div class="skcard">
+                    <div class="sk-icon">🏗</div>
+                    <div class="sk-cat">Platform Architecture</div>
+                    <ul class="sk-list">
+                        <li>CI-Agnostic Design Patterns</li>
+                        <li>Multi-CI (Jenkins / GitHub Actions)</li>
+                        <li>Jenkins Shared Libraries</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+                <div class="skcard">
+                    <div class="sk-icon">💻</div>
+                    <div class="sk-cat">Software Development</div>
+                    <ul class="sk-list">
+                        <li>Java — Spring Boot</li>
+                        <li>Python & Groovy</li>
+                        <li>Shell / Bash Scripting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-strip">
+            <div class="fl">Manprit Singh <span>Panesar</span></div>
+            <div class="fr">Sony India Software Centre &nbsp;·&nbsp; SISC | SARD | SIE</div>
+        </div>
+
+    </div>
+
+    <script>
+        // Auto-hide navbar when printing
+        window.addEventListener('beforeprint', () => document.querySelector('.navbar').style.display = 'none');
+        window.addEventListener('afterprint',  () => document.querySelector('.navbar').style.display = 'flex');
+    </script>
+
+</body>
+</html>
