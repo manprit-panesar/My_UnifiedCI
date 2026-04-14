@@ -1,46 +1,29 @@
-The Email Draft
-Subject: 
-Manprit Singh | Software Engineer (Intern) | 
-DevOps(CI/CD) & AI/ML Automation
-
+Subject: Internal Talent: Manprit Singh | Intelligent Automation & Portable CI/CD | SIE-SISC
 
 Dear [Director's Name],
 
-I hope this email finds you well. I am writing to you as I approach the completion of my one-year internship within the SIE under my manager
-Gautom Dutta. Over the past 11 months, I have focused on modernizing CI/CD infrastructure, specifically through the creation 
-of the "Unified CI Framework" and have delivered several successful POCs
-I wanted to share a high-level summary of the business value I have delivered during my intership.
+I hope this email finds you well.
 
-Summary of the value delivered during my internship: 
+As I approach the completion of my one-year journey within the SIE department under Gautom Dutta, I am eager to share the technical milestones and business value I have delivered. My work has focused on modernizing infrastructure through Intelligent Automation and CI-Agnostic architectures.
 
-- Unified CI Framework: Designed and architected a common Jenkins Shared Library supporting Java, Python, React and Mobile CI/CD
-reducing project setup time from days to hours.
+I have attached a high-level Impact Portfolio and my Final Residency Presentation (Q1–Q4), which detail how my projects have optimized costs and improved developer velocity.
 
-- Cost Optimization through AI/ML: Developed a predictive AWS EC2 node selector (~76% accuracy) that intelligently allocates 
-AWS cloud resources based on trained model from project past builds, directly reducing infrastructure cost and improves performance.
+Key Internship Outcomes:
 
-- Agentic AI System: Participated in the SIE Hackathon, developing a Self-Healing CI/CD system using Agentic AI to automate 
-build failure diagnostics along with the automated fix.
+Architectural Portability: Engineered a CI-agnostic framework that decouples logic from tools (Jenkins/GHA/GitLab), ensuring zero vendor lock-in.
 
-- AI Integration: Implemented the Model Context Protocol (MCP) to bridge LLM with Jenkins, creating a secure environment 
-for AI-assisted debugging.
+Cost Optimization: Developed an ML-powered AWS Node Selector (~76% accuracy) to reduce cloud infrastructure waste.
 
-- Operational Efficiency: Automated repository maintenance to handle stale Pull Requests, ensuring a cleaner and more secure 
-codebase across the organization.
+Intelligent Automation: Built a Self-Healing CI/CD system using Agentic AI to automate build failure diagnostics.
 
-- CI-Agnostic Architecture (Current Focus) - Currently engineering a portable framework where core logic is written once and 
-triggered by any tool (Jenkins, GitHub Actions, or GitLab), ensuring zero vendor lock-in.
+Unified Framework: Architected a standardized library that reduced project setup time from days to hours.
 
-Tech Stack Summary:
-AI/ML & Intelligent Automation: ML Data Modeling, Agentic AI, Model Context Protocol (MCP).
-DevOps & Architecture: Jenkins Shared Libraries, GitHub Actions, CI-Agnostic Frameworks, Docker.
-Software Development: Java (Spring Boot), Python, Groovy, Shell Scripting.
+I have also attached my resume for your reference. I would value the opportunity to discuss how my expertise in AI-integrated DevOps aligns with the upcoming goals of the SARD department.
 
-I would value the opportunity to provide a brief overview of these projects and discuss potential requirements. 
-I have attached my final presentation of my 1 year journey along with my Resume for your reference.
+Thank you for your time and mentorship.
 
-Thank you for your time
+Best regards,
 
-Best regards,Manprit Singh
+Manprit Singh Panesar
 Software Engineer (Intern)
 SIE | SARD | Sony India Software Centre
