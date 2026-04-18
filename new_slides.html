@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides 12, 13, 14 — Mockup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0f23;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+        h1 { color: #fff; font-size: 1.4rem; margin-bottom: -20px; }
+        .label { color: #8b8ba7; font-size: 0.9rem; margin-bottom: 5px; text-align: center; }
+
+        /* Slide */
+        .slide {
+            width: 1100px;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ======= SLIDE 12: WHAT I BRING TO THE TABLE ======= */
+        .slide-12 {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+        }
+        .slide-12 .header-bar {
+            background: rgba(255,255,255,0.05);
+            padding: 14px 30px;
+            border-bottom: 3px solid #00b4d8;
+            display: flex;
+            align-items: center;
+        }
+        .slide-12 .header-bar h2 {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        .slide-12 .slide-num {
+            margin-left: auto;
+            color: #00b4d8;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            padding: 20px 25px;
+        }
+        .eco-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 14px;
+            transition: all 0.3s;
+        }
+        .eco-card.highlight {
+            background: rgba(0, 180, 216, 0.12);
+            border: 2px solid rgba(0, 180, 216, 0.5);
+        }
+        .eco-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+            border-color: #00b4d8;
+        }
+        .eco-icon { font-size: 1.5rem; margin-bottom: 6px; }
+        .eco-title {
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .eco-desc {
+            color: #8b8ba7;
+            font-size: 0.68rem;
+            line-height: 1.4;
+        }
+        .new-badge {
+            display: inline-block;
+            background: #00b4d8;
+            color: #fff;
+            font-size: 0.55rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        .final-message {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #00b4d8, #7c3aed);
+            padding: 16px 30px;
+        }
+        .final-message p {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ======= SLIDE 13: WHAT I'VE BECOME ======= */
+        .slide-13 {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+        }
+        .slide-13 .header-bar {
+            background: rgba(255,255,255,0.05);
+            padding: 14px 30px;
+            border-bottom: 3px solid #7c3aed;
+            display: flex;
+            align-items: center;
+        }
+        .slide-13 .header-bar h2 {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        .slide-13 .slide-num {
+            margin-left: auto;
+            color: #7c3aed;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .transform-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 30px 50px;
+        }
+
+        .before-box, .after-box {
+            flex: 1;
+            border-radius: 16px;
+            padding: 24px;
+            min-height: 280px;
+        }
+        .before-box {
+            background: rgba(239, 68, 68, 0.08);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+        }
+        .after-box {
+            background: rgba(16, 185, 129, 0.08);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+        }
+        .box-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .before-box .box-label { color: #ef4444; }
+        .after-box .box-label { color: #10b981; }
+
+        .box-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .box-items {
+            list-style: none;
+            padding: 0;
+        }
+        .box-items li {
+            color: #ccc;
+            font-size: 0.78rem;
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .before-box .box-items li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-weight: 700;
+        }
+        .after-box .box-items li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .arrow-middle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .arrow-icon {
+            font-size: 2.5rem;
+            color: #00b4d8;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+        .arrow-label {
+            color: #00b4d8;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .identity-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #7c3aed, #00b4d8);
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        .identity-tag {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ======= SLIDE 14: THANK YOU ======= */
+        .slide-14 {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-14 .accent-line {
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #00b4d8, #7c3aed);
+            border-radius: 2px;
+            margin: 24px 0;
+        }
+        .slide-14 .thank-text {
+            color: #fff;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        .slide-14 .sub-text {
+            color: #00b4d8;
+            font-size: 1.2rem;
+            margin-top: 12px;
+        }
+        .slide-14 .journey-icons {
+            margin-top: 30px;
+            color: #8b8ba7;
+            font-size: 1.3rem;
+            letter-spacing: 6px;
+        }
+        .slide-14 .journey-label {
+            color: #555;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== SLIDE 12 ========== -->
+<h1>📐 Slide 12 — What I Bring to the Table</h1>
+<p class="label">The "final cake" — all your work shown as ONE ecosystem</p>
+
+<div class="slide slide-12">
+    <div class="header-bar">
+        <h2>🎯 WHAT I BRING TO THE TABLE</h2>
+        <span class="slide-num">12</span>
+    </div>
+
+    <div class="ecosystem-grid">
+        <div class="eco-card">
+            <div class="eco-icon">🧹</div>
+            <div class="eco-title">Clean Repos</div>
+            <div class="eco-desc">Automated PR cleanup runs daily. Stale code gone. Zero manual effort.</div>
+        </div>
+        <div class="eco-card">
+            <div class="eco-icon">🔗</div>
+            <div class="eco-title">Standardized CI/CD</div>
+            <div class="eco-desc">UnifiedCI — one library for Java, Python, React. 5-line config. 95% less code.</div>
+        </div>
+        <div class="eco-card">
+            <div class="eco-icon">📱</div>
+            <div class="eco-title">Mobile CI/CD</div>
+            <div class="eco-desc">Android pipeline — build, test, deploy. Docker-based. Consistent.</div>
+        </div>
+        <div class="eco-card">
+            <div class="eco-icon">🧠</div>
+            <div class="eco-title">AI-Assisted CI/CD</div>
+            <div class="eco-desc">Copilot + MCP — AI reads build logs, summarizes failures, suggests fixes.</div>
+        </div>
+        <div class="eco-card">
+            <div class="eco-icon">💰</div>
+            <div class="eco-title">Smart Resource Selection</div>
+            <div class="eco-desc">ML predicts right AWS machine. No guessing. Right cost, right performance.</div>
+        </div>
+        <div class="eco-card">
+            <div class="eco-icon">🏆</div>
+            <div class="eco-title">Self-Healing CI/CD</div>
+            <div class="eco-desc">Hackathon — builds that detect failures and fix themselves.</div>
+        </div>
+        <div class="eco-card highlight">
+            <div class="eco-icon">📦</div>
+            <div class="eco-title">Multi-CI Python SDK <span class="new-badge">NEW</span></div>
+            <div class="eco-desc">One codebase, runs on Jenkins & GitHub Actions. Write once, run anywhere.</div>
+        </div>
+    </div>
+
+    <div class="final-message">
+        <p>Not just automations — a complete CI/CD ecosystem that's standardized, cross-platform, cost-efficient & getting smarter</p>
+    </div>
+</div>
+
+
+<!-- ========== SLIDE 13 ========== -->
+<h1>📐 Slide 13 — What I've Become</h1>
+<p class="label">Your transformation — Before vs After + clear identity</p>
+
+<div class="slide slide-13">
+    <div class="header-bar">
+        <h2>🚀 WHAT I'VE BECOME</h2>
+        <span class="slide-num">13</span>
+    </div>
+
+    <div class="transform-section">
+        <div class="before-box">
+            <div class="box-label">May 2025 — Day 1</div>
+            <div class="box-title">Fresher</div>
+            <ul class="box-items">
+                <li>Knew Java & Spring Boot basics</li>
+                <li>No CI/CD experience</li>
+                <li>Waited for tasks to be assigned</li>
+                <li>Needed step-by-step guidance</li>
+                <li>Unfamiliar with corporate tools</li>
+            </ul>
+        </div>
+
+        <div class="arrow-middle">
+            <div class="arrow-icon">→</div>
+            <div class="arrow-label">1 Year</div>
+        </div>
+
+        <div class="after-box">
+            <div class="box-label">May 2026 — Today</div>
+            <div class="box-title">DevOps Engineer</div>
+            <ul class="box-items">
+                <li>Builds CI/CD pipelines end-to-end</li>
+                <li>Automates in Groovy, Python, Shell</li>
+                <li>Works with Docker, Jenkins, AWS</li>
+                <li>Explores AI/ML in infrastructure</li>
+                <li>Identifies problems & proposes solutions</li>
+                <li>Runs 3 projects simultaneously</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="identity-bar">
+        <span class="identity-tag">🔧 DevOps Engineer</span>
+        <span class="identity-tag">📦 SDK Builder</span>
+        <span class="identity-tag">🤖 AI/ML Explorer</span>
+        <span class="identity-tag">📱 Mobile CI/CD</span>
+        <span class="identity-tag">💡 Self-Starter</span>
+    </div>
+</div>
+
+
+<!-- ========== SLIDE 14 ========== -->
+<h1>📐 Slide 14 — Thank You</h1>
+<p class="label">Clean, simple closing</p>
+
+<div class="slide slide-14">
+    <div class="thank-text">THANK YOU</div>
+    <div class="accent-line"></div>
+    <div class="sub-text">Happy to take any questions 🙌</div>
+    <div class="journey-icons">🧹 → 🔗 → ⚛️🧠 → 📱💰 → 🏆</div>
+    <div class="journey-label">LEARN → BUILD → EXTEND → INNOVATE → COMPETE</div>
+</div>
+
+</body>
+</html>
