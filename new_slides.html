@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slides 12, 13, 14 — Mockup</title>
+    <title>Final Slides — Mockup (Merged)</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,12 +14,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
-        h1 { color: #fff; font-size: 1.4rem; margin-bottom: -20px; }
-        .label { color: #8b8ba7; font-size: 0.9rem; margin-bottom: 5px; text-align: center; }
-
-        /* Slide */
+        .slide-label {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: -30px;
+        }
+        .slide-desc {
+            color: #8b8ba7;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
         .slide {
             width: 1100px;
             aspect-ratio: 16/9;
@@ -29,162 +37,228 @@
             position: relative;
         }
 
-        /* ======= SLIDE 12: WHAT I BRING TO THE TABLE ======= */
-        .slide-12 {
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
-        }
-        .slide-12 .header-bar {
+        /* ====== SHARED HEADER ====== */
+        .header-bar {
             background: rgba(255,255,255,0.05);
             padding: 14px 30px;
-            border-bottom: 3px solid #00b4d8;
             display: flex;
             align-items: center;
         }
-        .slide-12 .header-bar h2 {
+        .header-bar h2 {
             color: #fff;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+        .slide-num {
+            margin-left: auto;
             font-size: 1.4rem;
             font-weight: 800;
         }
-        .slide-12 .slide-num {
-            margin-left: auto;
-            color: #00b4d8;
-            font-size: 1.5rem;
-            font-weight: 800;
+
+        /* ====== SLIDE 12: SUMMARY (MERGED) ====== */
+        .slide-12 {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
+        }
+        .slide-12 .header-bar { border-bottom: 3px solid #00b4d8; }
+        .slide-12 .slide-num { color: #00b4d8; }
+
+        .summary-body {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            padding: 20px 28px;
+            height: calc(100% - 55px - 50px);
         }
 
-        .ecosystem-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            padding: 20px 25px;
+        /* Left metrics */
+        .metrics-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
-        .eco-card {
+        .metric-card {
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 14px;
-            transition: all 0.3s;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
         }
-        .eco-card.highlight {
-            background: rgba(0, 180, 216, 0.12);
-            border: 2px solid rgba(0, 180, 216, 0.5);
+        .metric-icon { font-size: 1.4rem; margin-bottom: 6px; }
+        .metric-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00b4d8, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .eco-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-3px);
-            border-color: #00b4d8;
-        }
-        .eco-icon { font-size: 1.5rem; margin-bottom: 6px; }
-        .eco-title {
-            color: #fff;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .eco-desc {
+        .metric-label {
             color: #8b8ba7;
-            font-size: 0.68rem;
-            line-height: 1.4;
-        }
-        .new-badge {
-            display: inline-block;
-            background: #00b4d8;
-            color: #fff;
-            font-size: 0.55rem;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 6px;
-            vertical-align: middle;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 2px;
         }
 
-        .final-message {
+        /* Right content */
+        .right-content {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* POCs Section */
+        .section-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 14px 18px;
+        }
+        .section-title {
+            color: #00b4d8;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .poc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 20px;
+        }
+        .poc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #ccc;
+            font-size: 0.72rem;
+            line-height: 1.5;
+            padding: 3px 0;
+        }
+        .poc-num {
+            background: rgba(0, 180, 216, 0.15);
+            color: #00b4d8;
+            padding: 1px 7px;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .poc-item.highlight {
+            color: #fff;
+        }
+        .poc-item.highlight .poc-num {
+            background: rgba(124, 58, 237, 0.25);
+            color: #a78bfa;
+        }
+        .new-tag {
+            background: #00b4d8;
+            color: #fff;
+            font-size: 0.5rem;
+            font-weight: 700;
+            padding: 1px 5px;
+            border-radius: 3px;
+            margin-left: 4px;
+        }
+
+        /* Docs section */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+        .doc-item {
+            color: #aaa;
+            font-size: 0.68rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .doc-icon { font-size: 0.85rem; }
+
+        /* Ecosystem banner */
+        .ecosystem-bar {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             background: linear-gradient(90deg, #00b4d8, #7c3aed);
-            padding: 16px 30px;
+            padding: 13px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        .final-message p {
+        .ecosystem-bar p {
             color: #fff;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            text-align: center;
+        }
+        .eco-tag {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.6rem;
+            font-weight: 600;
         }
 
-        /* ======= SLIDE 13: WHAT I'VE BECOME ======= */
+        /* ====== SLIDE 13: WHAT I'VE BECOME ====== */
         .slide-13 {
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
         }
-        .slide-13 .header-bar {
-            background: rgba(255,255,255,0.05);
-            padding: 14px 30px;
-            border-bottom: 3px solid #7c3aed;
-            display: flex;
-            align-items: center;
-        }
-        .slide-13 .header-bar h2 {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: 800;
-        }
-        .slide-13 .slide-num {
-            margin-left: auto;
-            color: #7c3aed;
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
+        .slide-13 .header-bar { border-bottom: 3px solid #7c3aed; }
+        .slide-13 .slide-num { color: #7c3aed; }
 
         .transform-section {
             display: flex;
-            align-items: center;
-            gap: 40px;
-            padding: 30px 50px;
+            align-items: stretch;
+            gap: 30px;
+            padding: 28px 45px;
         }
-
         .before-box, .after-box {
             flex: 1;
             border-radius: 16px;
-            padding: 24px;
-            min-height: 280px;
+            padding: 22px;
         }
         .before-box {
-            background: rgba(239, 68, 68, 0.08);
-            border: 2px solid rgba(239, 68, 68, 0.3);
+            background: rgba(239, 68, 68, 0.07);
+            border: 2px solid rgba(239, 68, 68, 0.25);
         }
         .after-box {
-            background: rgba(16, 185, 129, 0.08);
-            border: 2px solid rgba(16, 185, 129, 0.3);
+            background: rgba(16, 185, 129, 0.07);
+            border: 2px solid rgba(16, 185, 129, 0.25);
         }
         .box-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             letter-spacing: 2px;
-            margin-bottom: 12px;
             text-transform: uppercase;
+            margin-bottom: 10px;
         }
         .before-box .box-label { color: #ef4444; }
         .after-box .box-label { color: #10b981; }
-
         .box-title {
-            font-size: 1.1rem;
-            font-weight: 800;
+            font-size: 1.2rem;
+            font-weight: 900;
             color: #fff;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
-
         .box-items {
             list-style: none;
             padding: 0;
         }
         .box-items li {
-            color: #ccc;
+            color: #bbb;
             font-size: 0.78rem;
             padding: 5px 0;
-            padding-left: 20px;
+            padding-left: 22px;
             position: relative;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         .before-box .box-items li::before {
             content: '✗';
@@ -200,12 +274,12 @@
             color: #10b981;
             font-weight: 700;
         }
-
-        .arrow-middle {
+        .arrow-mid {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 6px;
         }
         .arrow-icon {
             font-size: 2.5rem;
@@ -213,40 +287,38 @@
             animation: pulse 1.5s ease-in-out infinite;
         }
         @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
+            0%, 100% { opacity: 0.4; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.15); }
         }
-        .arrow-label {
+        .arrow-text {
             color: #00b4d8;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .identity-bar {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             background: linear-gradient(90deg, #7c3aed, #00b4d8);
-            padding: 18px 30px;
+            padding: 16px 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
         }
         .identity-tag {
             background: rgba(255,255,255,0.15);
             color: #fff;
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            backdrop-filter: blur(4px);
         }
 
-        /* ======= SLIDE 14: THANK YOU ======= */
+        /* ====== SLIDE 14: THANK YOU ====== */
         .slide-14 {
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
             display: flex;
@@ -254,97 +326,157 @@
             align-items: center;
             justify-content: center;
         }
-        .slide-14 .accent-line {
-            width: 60%;
+        .thank-text {
+            color: #fff;
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+        .accent-line {
+            width: 50%;
             height: 3px;
             background: linear-gradient(90deg, #00b4d8, #7c3aed);
             border-radius: 2px;
-            margin: 24px 0;
+            margin: 22px 0;
         }
-        .slide-14 .thank-text {
-            color: #fff;
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-        .slide-14 .sub-text {
+        .sub-text {
             color: #00b4d8;
-            font-size: 1.2rem;
-            margin-top: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
-        .slide-14 .journey-icons {
-            margin-top: 30px;
+        .journey-flow {
+            margin-top: 35px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .j-step {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 8px 16px;
+            text-align: center;
+        }
+        .j-icon { font-size: 1.2rem; }
+        .j-label {
             color: #8b8ba7;
-            font-size: 1.3rem;
-            letter-spacing: 6px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 3px;
         }
-        .slide-14 .journey-label {
-            color: #555;
-            font-size: 0.8rem;
-            margin-top: 8px;
-            letter-spacing: 3px;
+        .j-arrow { color: #555; font-size: 1.2rem; }
+
+        /* Speaking notes */
+        .speech-box {
+            width: 1100px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 20px 28px;
+            margin-top: -30px;
+        }
+        .speech-box h3 {
+            color: #00b4d8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .speech-box p {
+            color: #aaa;
+            font-size: 0.78rem;
+            line-height: 1.7;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-<!-- ========== SLIDE 12 ========== -->
-<h1>📐 Slide 12 — What I Bring to the Table</h1>
-<p class="label">The "final cake" — all your work shown as ONE ecosystem</p>
+<!-- ========== SLIDE 12: SUMMARY (MERGED) ========== -->
+<div class="slide-label">📐 Slide 12 — Summary</div>
+<div class="slide-desc">Numbers + POC list + ecosystem value — all in ONE slide</div>
 
 <div class="slide slide-12">
     <div class="header-bar">
-        <h2>🎯 WHAT I BRING TO THE TABLE</h2>
+        <h2>📊 SUMMARY</h2>
         <span class="slide-num">12</span>
     </div>
 
-    <div class="ecosystem-grid">
-        <div class="eco-card">
-            <div class="eco-icon">🧹</div>
-            <div class="eco-title">Clean Repos</div>
-            <div class="eco-desc">Automated PR cleanup runs daily. Stale code gone. Zero manual effort.</div>
+    <div class="summary-body">
+        <!-- Left: Metrics -->
+        <div class="metrics-col">
+            <div class="metric-card">
+                <div class="metric-icon">✅</div>
+                <div class="metric-number">5</div>
+                <div class="metric-label">POCs Delivered</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">⚙️</div>
+                <div class="metric-number">4</div>
+                <div class="metric-label">Tech Stacks</div>
+            </div>
         </div>
-        <div class="eco-card">
-            <div class="eco-icon">🔗</div>
-            <div class="eco-title">Standardized CI/CD</div>
-            <div class="eco-desc">UnifiedCI — one library for Java, Python, React. 5-line config. 95% less code.</div>
-        </div>
-        <div class="eco-card">
-            <div class="eco-icon">📱</div>
-            <div class="eco-title">Mobile CI/CD</div>
-            <div class="eco-desc">Android pipeline — build, test, deploy. Docker-based. Consistent.</div>
-        </div>
-        <div class="eco-card">
-            <div class="eco-icon">🧠</div>
-            <div class="eco-title">AI-Assisted CI/CD</div>
-            <div class="eco-desc">Copilot + MCP — AI reads build logs, summarizes failures, suggests fixes.</div>
-        </div>
-        <div class="eco-card">
-            <div class="eco-icon">💰</div>
-            <div class="eco-title">Smart Resource Selection</div>
-            <div class="eco-desc">ML predicts right AWS machine. No guessing. Right cost, right performance.</div>
-        </div>
-        <div class="eco-card">
-            <div class="eco-icon">🏆</div>
-            <div class="eco-title">Self-Healing CI/CD</div>
-            <div class="eco-desc">Hackathon — builds that detect failures and fix themselves.</div>
-        </div>
-        <div class="eco-card highlight">
-            <div class="eco-icon">📦</div>
-            <div class="eco-title">Multi-CI Python SDK <span class="new-badge">NEW</span></div>
-            <div class="eco-desc">One codebase, runs on Jenkins & GitHub Actions. Write once, run anywhere.</div>
+
+        <!-- Right: POCs + Docs -->
+        <div class="right-content">
+            <div class="section-box">
+                <div class="section-title">✅ Delivered POCs</div>
+                <div class="poc-grid">
+                    <div class="poc-item">
+                        <span class="poc-num">1</span>
+                        <span>Automated Repository Maintenance</span>
+                    </div>
+                    <div class="poc-item">
+                        <span class="poc-num">2</span>
+                        <span>Unified CI for Java & Python</span>
+                    </div>
+                    <div class="poc-item">
+                        <span class="poc-num">3</span>
+                        <span>React Extension + AI/ML Research / Jenkins MCP</span>
+                    </div>
+                    <div class="poc-item">
+                        <span class="poc-num">4</span>
+                        <span>ML Node Selection + Mobile CI/CD</span>
+                    </div>
+                    <div class="poc-item highlight">
+                        <span class="poc-num">5</span>
+                        <span>Platform-Agnostic CI: Jenkins & GitHub Actions <span class="new-tag">NEW</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-box">
+                <div class="section-title">📄 Documentation</div>
+                <div class="doc-grid">
+                    <div class="doc-item"><span class="doc-icon">📐</span> Architecture docs for all POCs</div>
+                    <div class="doc-item"><span class="doc-icon">📘</span> API reference & onboarding guides</div>
+                    <div class="doc-item"><span class="doc-icon">⚙️</span> Configuration schemas & examples</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="final-message">
-        <p>Not just automations — a complete CI/CD ecosystem that's standardized, cross-platform, cost-efficient & getting smarter</p>
+    <div class="ecosystem-bar">
+        <p>Not just automations — a complete CI/CD ecosystem →</p>
+        <span class="eco-tag">Standardized</span>
+        <span class="eco-tag">Cross-Platform</span>
+        <span class="eco-tag">Cost-Efficient</span>
+        <span class="eco-tag">AI-Powered</span>
     </div>
 </div>
 
+<div class="speech-box">
+    <h3>🎤 What to say</h3>
+    <p>"So let me put it all together. Over this year — 5 POCs delivered, 4 tech stacks covered. POC 1 — repo cleanup. POC 2 — UnifiedCI for Java and Python. POC 3 — React + AI with Jenkins MCP. POC 4 — ML node selection and mobile CI/CD. And POC 5 — a platform-agnostic SDK that runs on both Jenkins and GitHub Actions from one Python codebase. Everything is documented — architecture docs, API references, onboarding guides. So what does the org get? A new team joins — pipeline is ready. Repos stay clean. System picks the right machine. AI helps when things fail. A complete CI/CD ecosystem."</p>
+</div>
 
-<!-- ========== SLIDE 13 ========== -->
-<h1>📐 Slide 13 — What I've Become</h1>
-<p class="label">Your transformation — Before vs After + clear identity</p>
+
+<!-- ========== SLIDE 13: WHAT I'VE BECOME ========== -->
+<div class="slide-label">📐 Slide 13 — What I've Become</div>
+<div class="slide-desc">Your personal transformation — Fresher → DevOps Engineer</div>
 
 <div class="slide slide-13">
     <div class="header-bar">
@@ -365,9 +497,9 @@
             </ul>
         </div>
 
-        <div class="arrow-middle">
+        <div class="arrow-mid">
             <div class="arrow-icon">→</div>
-            <div class="arrow-label">1 Year</div>
+            <div class="arrow-text">1 Year</div>
         </div>
 
         <div class="after-box">
@@ -378,8 +510,8 @@
                 <li>Automates in Groovy, Python, Shell</li>
                 <li>Works with Docker, Jenkins, AWS</li>
                 <li>Explores AI/ML in infrastructure</li>
+                <li>Builds cross-platform SDKs</li>
                 <li>Identifies problems & proposes solutions</li>
-                <li>Runs 3 projects simultaneously</li>
             </ul>
         </div>
     </div>
@@ -393,17 +525,36 @@
     </div>
 </div>
 
+<div class="speech-box">
+    <h3>🎤 What to say</h3>
+    <p>"So if you ask me — what have I become this year? I came in as a fresher who knew some Java and Spring Boot. Now I'm a DevOps engineer who builds CI/CD pipelines, writes automation in Groovy and Python, works with Docker, explores AI/ML, and builds cross-platform SDKs. But more than the skills — it's the mindset. The ML idea? Nobody assigned that. The hackathon? Signed up on my own. From someone who waited for tasks to someone who finds problems and builds solutions."</p>
+</div>
 
-<!-- ========== SLIDE 14 ========== -->
-<h1>📐 Slide 14 — Thank You</h1>
-<p class="label">Clean, simple closing</p>
+
+<!-- ========== SLIDE 14: THANK YOU ========== -->
+<div class="slide-label">📐 Slide 14 — Thank You</div>
+<div class="slide-desc">Clean, simple closing</div>
 
 <div class="slide slide-14">
     <div class="thank-text">THANK YOU</div>
     <div class="accent-line"></div>
     <div class="sub-text">Happy to take any questions 🙌</div>
-    <div class="journey-icons">🧹 → 🔗 → ⚛️🧠 → 📱💰 → 🏆</div>
-    <div class="journey-label">LEARN → BUILD → EXTEND → INNOVATE → COMPETE</div>
+    <div class="journey-flow">
+        <div class="j-step"><div class="j-icon">🧹</div><div class="j-label">Learn</div></div>
+        <div class="j-arrow">→</div>
+        <div class="j-step"><div class="j-icon">🔗</div><div class="j-label">Build</div></div>
+        <div class="j-arrow">→</div>
+        <div class="j-step"><div class="j-icon">⚛️</div><div class="j-label">Extend</div></div>
+        <div class="j-arrow">→</div>
+        <div class="j-step"><div class="j-icon">🧠</div><div class="j-label">Innovate</div></div>
+        <div class="j-arrow">→</div>
+        <div class="j-step"><div class="j-icon">📦</div><div class="j-label">Unify</div></div>
+    </div>
+</div>
+
+<div class="speech-box">
+    <h3>🎤 What to say</h3>
+    <p>"Thank you for your time. Happy to take any questions."</p>
 </div>
 
 </body>
